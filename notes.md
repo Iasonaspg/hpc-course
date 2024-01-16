@@ -82,3 +82,29 @@ To achieve linear scaling we need:
 #### **Weak scaling**
 
 > Both the number of processors and the problem size are increased. This also results in a constant workload per processor. We are solving larger problems in the same time as it takes to solve smaller ones on a smaller machine. It is used in *memory-bound* applications.
+
+## Computer Architecture
+
+### Instruction-level Parallelism (ILP)
+
+A family of processor and compiler design techniques that speed up execution by causing individual machine operations, such as memory loads and stores,
+integer additions and floating point multiplications, to execute in parallel.
+
+Micro-architectural techniques that are used to exploit ILP include:
+
+* multiple-issue: instructions that are independent can be started at the same time
+* pipelining: arithmetic units can deal with multiple operations in various stages of completion
+* branch prediction and speculative execution: a compiler can ‘guess’ whether a conditional instruction will evaluate to true, and execute those instructions accordingly
+* out-of-order execution: instructions can be rearranged if they are not dependent on each other,
+and if the resulting execution will be more efficient;
+* prefetching: data can be speculatively requested before any instruction needing it is actually encountered.
+
+## Recursive doubling
+
+![](./assets/recursive_doubling.png)
+
+## Pipelining
+
+If every pipeline stage is designed to finish in 1 clock cycle, each FPU can produce one result per cycle asymptotically.
+
+The first result cannot be computed in less cycles than the number of stages, the later can!
